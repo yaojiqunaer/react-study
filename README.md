@@ -21,7 +21,7 @@ npm install -g cnpm --registry=https://registry.npmmirror.com
 npm config set registry https://registry.npmmirror.com
 ```
 
-### `cnpm install -g create-react-app`
+### `npm install -g create-react-app`
 
 If you have a global installation of create-react-app, you can use it to create new projects
 
@@ -43,6 +43,35 @@ This will create a new react app in the directory my-app
 ### `npm install react-router-dom`
 
 [react-router-dom](https://reactrouter.com/en/main) is a routing library for React that allows you to declaratively define your routes and handle navigation within your application.
+
+### `npm install @craco/craco -D`
+
+[craco](https://craco.js.org/docs/getting-started/) customize your configurations ESLint, Babel, PostCSS, and many more with just a single configuration file at the root of your project.
+
+1. you need create a file named `craco.config.js` in the root of your project
+   ``` jsx
+   // https://craco.js.org/docs/getting-started/
+   const path = require('path')
+   module.exports = {
+       webpack: {
+           alias: {
+               '@': path.resolve(__dirname, 'src')
+           }
+       }
+   }
+   ```
+2. if you use VSCode IDE, you can create file `jsconfig.json` that lets IDE implement the automatic association function after the `@` symbol
+   ``` json
+   {
+       "compilerOptions": {
+           "baseUrl": "./",
+           "paths": {
+               "@/*": [
+                   "src/*"
+               ]
+           }
+       }
+   }
 
 ### `npm install react-redux`
 
