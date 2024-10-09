@@ -34,7 +34,11 @@ This will create a new react app in the directory my-app
 
 ### `npm install sass -D`
 
-This will install the node-sass package, which is a library that allows you to use Sass in your project
+[sass](https://www.sass.hk/docs/) is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects.
+
+### `npm install antd --save`
+
+[antd](https://ant-design.antgroup.com/docs/react/getting-started-cn) is UI library that contains a set of high quality components and demos for building rich, interactive user interfaces.
 
 ### `npm install react-router-dom`
 
