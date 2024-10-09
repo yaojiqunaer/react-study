@@ -30,6 +30,32 @@ If you have a global installation of create-react-app, you can use it to create 
 
 This will create a new react app in the directory my-app
 
+## Libraries
+
+### `npm install sass -D`
+
+This will install the node-sass package, which is a library that allows you to use Sass in your project
+
+### `npm install react-router-dom`
+
+This will install the react-router-dom package, which is a library that allows you to use routing in your project
+
+### `npm install react-dom`
+
+This will install the react-dom package, which is a library that allows you to use React in your project
+
+### `npm install react-redux`
+
+This will install the react-redux package, which is a library that allows you to use Redux in your project
+
+### `npm install redux`
+
+This will install the redux package, which is a library that allows you to use Redux in your project
+
+### `npm install axios`
+
+This will install the axios package, which is a library that allows you to make HTTP requests in your project
+
 ## Available Scripts
 
 In the project directory, you can run:
