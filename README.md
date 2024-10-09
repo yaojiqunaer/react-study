@@ -42,11 +42,7 @@ This will create a new react app in the directory my-app
 
 ### `npm install react-router-dom`
 
-This will install the react-router-dom package, which is a library that allows you to use routing in your project
-
-### `npm install react-dom`
-
-This will install the react-dom package, which is a library that allows you to use React in your project
+[react-router-dom](https://reactrouter.com/en/main) is a routing library for React that allows you to declaratively define your routes and handle navigation within your application.
 
 ### `npm install react-redux`
 
