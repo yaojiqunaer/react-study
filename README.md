@@ -85,6 +85,11 @@ This will install the redux package, which is a library that allows you to use R
 
 This will install the axios package, which is a library that allows you to make HTTP requests in your project
 
+### Others
+
+https://ant.design/docs/react/recommendation-cn
+
+
 ## Available Scripts
 
 In the project directory, you can run:
