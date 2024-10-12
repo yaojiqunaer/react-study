@@ -35,15 +35,7 @@ const Login = () => {
         }
     ]);
     const phonePrefix = (
-        <Form.Item
-            name='phonePrefix'
-            noStyle
-            rules={[
-                {
-                    required: true,
-                    message: '请输入您的手机号',
-                },
-            ]}>
+        <Form.Item name='phonePrefix' noStyle>
             <Select defaultValue='+86' options={contryCode}> </Select>
         </Form.Item>
     );
@@ -51,8 +43,17 @@ const Login = () => {
     return (
         <div>
             <Card className='login-form'>
-                <Form>
-                    <Form.Item name='phone'>
+                <Form validateTrigger={['onBlur', 'onChange']}>
+                    <Form.Item name='phone' rules={
+                        [{
+                            required: true,
+                            message: '请输入您的手机号',
+                        },
+                        {
+                            pattern: /^1[3456789]\d{9}$/,
+                            message: '请输入正确的手机号',
+                        }]
+                    }>
                         <Input addonBefore={phonePrefix} placeholder='请输入手机号' />
                     </Form.Item>
                     <Form.Item>
@@ -65,6 +66,10 @@ const Login = () => {
                                         {
                                             required: true,
                                             message: '请输入短信验证码',
+                                        },
+                                        {
+                                            pattern: /^\d{6}$/,
+                                            message: '请输入正确的短信验证码',
                                         },
                                     ]}
                                 >
