@@ -73,6 +73,10 @@ This will create a new react app in the directory my-app
        }
    }
 
+### `npm install axios`
+
+[axios](https://axios-http.com/docs/intro) is a simple promise based HTTP client for the browser and node.js.
+
 ### `npm install react-redux`
 
 This will install the react-redux package, which is a library that allows you to use Redux in your project
@@ -80,10 +84,6 @@ This will install the react-redux package, which is a library that allows you to
 ### `npm install redux`
 
 This will install the redux package, which is a library that allows you to use Redux in your project
-
-### `npm install axios`
-
-This will install the axios package, which is a library that allows you to make HTTP requests in your project
 
 ### Others
 
