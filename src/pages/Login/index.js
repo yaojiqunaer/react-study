@@ -34,6 +34,11 @@ const Login = () => {
             region: '台湾省'
         }
     ]);
+
+    function submit(values) {
+        console.log(values)
+    }
+
     const phonePrefix = (
         <Form.Item name='phonePrefix' noStyle>
             <Select defaultValue='+86' options={contryCode}> </Select>
@@ -43,7 +48,8 @@ const Login = () => {
     return (
         <div>
             <Card className='login-form'>
-                <Form validateTrigger={['onBlur', 'onChange']}>
+                <Form validateTrigger={['onBlur', 'onChange']}
+                    onFinish={submit}>
                     <Form.Item name='phone' rules={
                         [{
                             required: true,
