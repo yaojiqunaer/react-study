@@ -99,7 +99,7 @@ const Login = () => {
                         ]}
                     >
                         <Checkbox>
-                            我已阅读并同意应用 <a href=''>服务协议</a> 和 <a href=''>隐私权政策</a>
+                            我已阅读并同意应用 <a href='www.baidu.com'>服务协议</a> 和 <a href='www.baidu.com'>隐私权政策</a>
                         </Checkbox>
                     </Form.Item>
 
