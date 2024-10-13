@@ -1,4 +1,5 @@
 // user state management
+import { request } from '@/utils'
 import { createSlice } from '@reduxjs/toolkit'
 
 const userStore = createSlice({
@@ -15,11 +16,19 @@ const userStore = createSlice({
     },
 })
 
+const loginApi = (loginData) => {
+    return async (dispatch) => {
+        // call api
+        await request.post('/posts', loginData).then(res => {
+            dispatch(setToken(res.phone))
+        })
+    }
+}
 
 const { setToken } = userStore.actions
 
 const userReducer = userStore.reducer
 
-export { setToken }
+export { loginApi, setToken }
 
 export default userReducer

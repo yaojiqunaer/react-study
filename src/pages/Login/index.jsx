@@ -7,9 +7,13 @@ import {
     Form,
     Row,
     Col,
-    Checkbox
+    Checkbox,
+    message
 } from 'antd'
 import '@/pages/Login/index.scss'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { loginApi } from '@/store/modules/user'
 
 const Login = () => {
     const contryCode = ([
@@ -35,8 +39,15 @@ const Login = () => {
         }
     ]);
 
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     function submit(values) {
-        console.log(values)
+        // trigger login api
+        dispatch(loginApi(values))
+        // redirect to home page
+        navigate('/')
+        message.success('登录成功')
     }
 
     const phonePrefix = (
