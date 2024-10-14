@@ -1,4 +1,5 @@
 import axios from "axios"
+import { getToken } from "@/utils/token"
 
 const baseURL = "https://jsonplaceholder.typicode.com"
 
@@ -9,6 +10,10 @@ const request = axios.create({
 
 request.interceptors.request.use(
     (config) => {
+        const token = getToken()
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`
+        }
         return config
     },
     (error) => {

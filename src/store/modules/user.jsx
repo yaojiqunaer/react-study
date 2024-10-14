@@ -1,5 +1,5 @@
 // user state management
-import { request } from '@/utils'
+import { request, setToken as _setToken, getToken } from '@/utils'
 import { createSlice } from '@reduxjs/toolkit'
 
 const userStore = createSlice({
@@ -11,7 +11,8 @@ const userStore = createSlice({
     // action: sync update state
     reducers: {
         setToken: (state, action) => {
-            state.token = action.payload
+            state.token = getToken()
+            _setToken(action.payload)
         },
     },
 })
