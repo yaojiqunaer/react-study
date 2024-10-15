@@ -1,11 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Layout from '@/pages/Layout'
 import Login from '@/pages/Login'
+import { AuthInterceptor } from '@/components/AuthInterceptor'
 
 const GlobalRouter = createBrowserRouter([
     {
         path: '/layout',
-        element: <Layout />,
+        element: <AuthInterceptor> <Layout /> </AuthInterceptor>,
     },
     {
         path: '/login',
