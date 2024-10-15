@@ -81,6 +81,10 @@ This will create a new react app in the directory my-app
 
 [redux](https://redux.js.org/introduction/getting-started) a JS library for predictable and maintainable global state management.
 
+### `npm install normalize.css`
+
+[normalize.css](https://necolas.github.io/normalize.css/) is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements.
+
 ### Others
 
 https://ant.design/docs/react/recommendation-cn
