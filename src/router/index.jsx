@@ -5,7 +5,7 @@ import { AuthInterceptor } from '@/components/AuthInterceptor'
 
 const GlobalRouter = createBrowserRouter([
     {
-        path: '/layout',
+        path: '/',
         element: <AuthInterceptor> <Layout /> </AuthInterceptor>,
     },
     {
@@ -15,7 +15,7 @@ const GlobalRouter = createBrowserRouter([
     {
         path: '*',
         element: <div>404</div>,
-    },
+    }
 ]);
 
 
