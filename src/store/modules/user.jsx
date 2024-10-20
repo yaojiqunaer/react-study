@@ -1,6 +1,7 @@
 // user state management
-import { request, setToken as _setToken, getToken } from '@/utils'
+import { setToken as _setToken, getToken } from '@/utils'
 import { createSlice } from '@reduxjs/toolkit'
+import { login, getUser } from '@/apis/userapi'
 
 const userStore = createSlice({
     name: 'user',
@@ -24,7 +25,7 @@ const userStore = createSlice({
 const loginApi = (loginData) => {
     return async (dispatch) => {
         // call api
-        await request.post('/posts', loginData).then(res => {
+        await login(loginData).then(res => {
             dispatch(setToken(res.phone))
         })
     }
@@ -32,7 +33,7 @@ const loginApi = (loginData) => {
 
 const getUserApi = () => {
     return async (dispatch) => {
-        await request.get('/users/1').then(res => {
+        await getUser().then(res => {
             dispatch(setUser(res))
         })
     }
