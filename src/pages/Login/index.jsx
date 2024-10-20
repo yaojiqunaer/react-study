@@ -42,12 +42,12 @@ const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    function submit(values) {
+    async function submit(values) {
         // trigger login api
-        dispatch(loginApi(values))
+        await dispatch(loginApi(values))
+        message.success('登录成功')
         // redirect to home page
         navigate('/')
-        message.success('登录成功')
     }
 
     const phonePrefix = (

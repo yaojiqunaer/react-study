@@ -11,6 +11,7 @@ import './index.scss'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserApi } from '@/store/modules/user'
+import { removeToken } from '@/utils'
 
 const { Header, Sider } = Layout
 
@@ -52,6 +53,11 @@ const GlobalLayout = () => {
     navigate(item.key)
   }
 
+  function logout() {
+    removeToken()
+    navigate('/login')
+  }
+
   return (
     <Layout>
       <Header
@@ -62,12 +68,13 @@ const GlobalLayout = () => {
       >
         <div className='demo-logo' />
         <div className='user-info'>
-          <span  className='user-name' >{conUser}</span>
+          <span className='user-name' >{conUser}</span>
           <span className='user-logout'>
             <Popconfirm
-              title="确认退出？"
+              title='确认退出？'
               onText='退出'
               cancelText='取消'
+              onConfirm={logout}
             >
               <LogoutOutlined />退出
             </Popconfirm>

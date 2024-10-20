@@ -1,5 +1,7 @@
 import axios from "axios"
-import { getToken } from "@/utils/token"
+import { getToken, removeToken } from "@/utils/token"
+import router from '@/router'
+import { message } from "antd"
 
 const baseURL = "https://jsonplaceholder.typicode.com"
 
@@ -26,6 +28,11 @@ request.interceptors.response.use(
         return response.data
     },
     (error) => {
+        if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+            removeToken()
+            message.error('登录已过期，请重新登录')
+            router.navigate('/login')
+        }
         return Promise.reject(error)
     }
 )
