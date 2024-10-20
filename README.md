@@ -36,7 +36,7 @@ This will create a new react app in the directory my-app
 
 [sass](https://www.sass.hk/docs/) is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects.
 
-### `npm install antd --save`
+### `npm install antd`
 
 [antd](https://ant-design.antgroup.com/docs/react/getting-started-cn) is UI library that contains a set of high quality components and demos for building rich, interactive user interfaces.
 
@@ -84,6 +84,10 @@ This will create a new react app in the directory my-app
 ### `npm install normalize.css`
 
 [normalize.css](https://necolas.github.io/normalize.css/) is a small CSS file that provides better cross-browser consistency in the default styling of HTML elements.
+
+### `npm install react-quill`
+
+[react-quill](https://github.com/zenoamaro/react-quill) is a React component for Quill rich text editor.
 
 ### Others
 

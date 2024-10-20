@@ -1,5 +1,10 @@
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css';
+import { useState } from 'react';
+
 const Publish = () => {
-    return <div>this is Publish</div>
+    const [value, setValue] = useState('');
+    return <ReactQuill theme='snow' value={value} onChange={setValue} />;
 }
 
 export default Publish
