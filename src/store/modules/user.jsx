@@ -7,12 +7,16 @@ const userStore = createSlice({
     // state
     initialState: {
         token: '',
+        currentUser: {},
     },
     // action: sync update state
     reducers: {
         setToken: (state, action) => {
             state.token = getToken()
             _setToken(action.payload)
+        },
+        setUser: (state, action) => {
+            state.currentUser = action.payload
         },
     },
 })
@@ -26,10 +30,23 @@ const loginApi = (loginData) => {
     }
 }
 
-const { setToken } = userStore.actions
+const getUserApi = () => {
+    return async (dispatch) => {
+        await request.get('/users/1').then(res => {
+            dispatch(setUser(res))
+        })
+    }
+}
+
+const { setToken, setUser } = userStore.actions
 
 const userReducer = userStore.reducer
 
-export { loginApi, setToken }
+export {
+    loginApi,
+    getUserApi,
+    setToken,
+    setUser
+}
 
 export default userReducer
