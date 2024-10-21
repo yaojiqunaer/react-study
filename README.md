@@ -89,6 +89,10 @@ This will create a new react app in the directory my-app
 
 [react-quill](https://github.com/zenoamaro/react-quill) is a React component for Quill rich text editor.
 
+### `npm install source-map-explorer`
+
+[source-map-explorer](https://www.npmjs.com/package/source-map-explorer) is a tool that helps you analyze the size of your JavaScript bundles.
+
 ### Others
 
 https://ant.design/docs/react/recommendation-cn
