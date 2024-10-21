@@ -9,12 +9,23 @@
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>React App</title>
+  <!-- js表达式写在<\%表达式\%> 渲染变量<\%=变量l\%> 这里的\是为了转义百分号防止webpack报错-->
+  <% if (process.env.NODE_ENV==='production' ) { %>
+    <% htmlWebpackPlugin.options.cdn.css.forEach(cdnUrl=> { %>
+      <link rel="stylesheet" href="<%= cdnUrl %>" />
+      <% }) %>
+        <% } %>
+          <title>React App</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <% if (process.env.NODE_ENV==='production' ) { %>
+    <% htmlWebpackPlugin.options.cdn.js.forEach(cdnUrl=> { %>
+      <script type="text/javascript" src="<%= cdnUrl %>"></script>
+      <% }) %>
+        <% } %>
 </body>
 
 </html>
