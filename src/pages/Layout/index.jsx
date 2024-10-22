@@ -38,7 +38,7 @@ const leftNav = [
 
 const GlobalLayout = () => {
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { colorBgContainer },
   } = theme.useToken()
 
   const navigate = useNavigate()

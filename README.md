@@ -93,6 +93,14 @@ This will create a new react app in the directory my-app
 
 [source-map-explorer](https://www.npmjs.com/package/source-map-explorer) is a tool that helps you analyze the size of your JavaScript bundles.
 
+### `npm install dotenv`
+
+[dotenv](https://www.npmjs.com/package/dotenv) is a zero-dependency module that loads environment variables from a .env file into process.env.
+
+### `npm install dotenv-cli -D`
+
+[dotenv-cli](https://www.npmjs.com/package/dotenv-cli) is a tool for managing environment variables.
+
 ### Others
 
 https://ant.design/docs/react/recommendation-cn

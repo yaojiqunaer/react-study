@@ -3,7 +3,7 @@ import { getToken, removeToken } from "@/utils/token"
 import router from '@/router'
 import { message } from "antd"
 
-const baseURL = "https://jsonplaceholder.typicode.com"
+const baseURL = process.env.REACT_APP_BACKEND_URL
 
 const request = axios.create({
     baseURL: baseURL,

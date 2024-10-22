@@ -6,6 +6,7 @@
     "@reduxjs/toolkit": "^2.2.8",
     "antd": "^5.21.3",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -17,8 +18,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "dotenv -e env/.env.development craco start",
+    "start:prod": "dotenv -e env/.env.production craco start",
+    "build": "dotenv -e env/.env.development craco build",
+    "build:test": "dotenv -e env/.env.test craco build",
+    "build:prod": "dotenv -e env/.env.production craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer build/static/js/*.js"
@@ -43,6 +47,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
+    "dotenv-cli": "^7.4.2",
     "sass": "^1.79.4"
   }
 }

@@ -1,16 +1,16 @@
 // https://craco.js.org/docs/getting-started/
-const { whenProd, getPlugin, pluginByName, whenDev } = require('@craco/craco')
+const { whenProd, getPlugin, pluginByName } = require('@craco/craco')
 const path = require('path')
+// 防止env文件暴漏到浏览器
+require('dotenv').config()
+
 module.exports = {
     webpack: {
         alias: {
             '@': path.resolve(__dirname, 'src')
         },
-        configure: (webpackConfig) => {
-            let cdn
-            whenDev(() => {
-
-            })
+        configure: (webpackConfig, { env }) => {
+            let cdn = { js: [], css: [] }
             whenProd(() => {
                 webpackConfig.externals = {
                     // key: 不参与打包的库名
@@ -18,15 +18,10 @@ module.exports = {
                     react: 'React',
                     'react-dom': 'ReactDOM'
                 }
-                cdn = {
-                    js: [
-                        'https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/cjs/react.production.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/cjs/react-dom.production.min.js'
-                    ],
-                    css: [
-
-                    ]
-                }
+                cdn.js = [
+                    'https://cdn.bootcdn.net/ajax/libs/react/17.0.2/umd/react.production.min.js',
+                    'https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js'
+                ]
             })
             // 修改HtmlWebpackPlugin插件的cdn地址
             const { isFound, match } = getPlugin(
